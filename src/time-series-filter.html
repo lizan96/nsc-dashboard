@@ -1,0 +1,88 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="../bower_components/paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../bower_components/paper-styles/element-styles/paper-material-styles.html">
+<link rel="import" href="../bower_components/paper-styles/color.html">
+<link ref="import" href="../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+
+<dom-module id="time-series-filter">
+  <template>
+     <style include="paper-material-styles">
+      :host {
+        display: block;
+
+      }
+
+      paper-checkbox {
+        align-self: center;
+        /*padding: 8px 16px;*/
+        --paper-checkbox-checked-color: var(--paper-green-500);
+        --paper-checkbox-checked-ink-color: var(--paper-green-500);
+        --paper-checkbox-unchecked-color: var(--paper-green-900);
+        --paper-checkbox-unchecked-ink-color: var(--paper-green-900);
+        --paper-checkbox-margin: 3px 30px 3px 16px;
+        /*--paper-checkbox-vertical-align: top;*/
+        padding-bottom: 5px;
+      }
+
+      h4 {
+        padding-top: 20px;
+        text-align: center;
+      }
+
+      paper-button { 
+        font-size: 12pt;
+        margin-left: 30%;
+        margin-right: 30%;
+        margin-bottom: 10px;
+      }
+
+
+      paper-material {
+/*        margin: 5px;*/
+        padding-left: 5px;
+        margin-bottom: 10px;
+      }
+
+      hr {
+        margin-left: 30px;
+        margin-right: 30px;
+      }
+
+
+    </style>
+
+    <div class=paper-material elevation="2">
+      <h4>TIME SERIES</h4>
+      <hr></hr>
+
+      <paper-checkbox>Step Count</paper-checkbox>
+      <paper-checkbox>Prize</paper-checkbox>
+      <paper-checkbox>Streak Cluster</paper-checkbox>
+      <paper-checkbox>Phase Cluster</paper-checkbox>
+      <br/>
+      <paper-button raised> Apply </paper-button>
+    </div>
+
+    
+  </template>
+
+  <script>
+    class TimeSeriesFilter extends Polymer.Element {
+      static get is() { return 'time-series-filter'; }
+    }
+
+    window.customElements.define(TimeSeriesFilter.is, TimeSeriesFilter);
+  </script>
+</dom-module>

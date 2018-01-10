@@ -1,0 +1,106 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="../bower_components/paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../bower_components/paper-styles/element-styles/paper-material-styles.html">
+<link rel="import" href="../bower_components/paper-styles/color.html">
+<link ref="import" href="../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-range-slider/paper-range-slider.html">
+
+
+<dom-module id="step-filter">
+  <template>
+     <style include="paper-material-styles">
+      :host {
+        display: block;
+
+      }
+
+      paper-checkbox {
+        align-self: center;
+        /*padding: 8px 16px;*/
+        --paper-checkbox-checked-color: var(--paper-green-500);
+        --paper-checkbox-checked-ink-color: var(--paper-green-500);
+        --paper-checkbox-unchecked-color: var(--paper-green-900);
+        --paper-checkbox-unchecked-ink-color: var(--paper-green-900);
+        --paper-checkbox-margin: 3px 30px 3px 16px;
+        /*--paper-checkbox-vertical-align: top;*/
+        padding-bottom: 5px;
+      }
+
+      paper-button { 
+        display: inline;
+        font-size: 12pt;
+        margin-bottom: 100px;
+        margin-left: 20px;
+      }
+
+      paper-material {
+        padding-left: 5px;
+        margin-bottom: 10px;
+        padding-bottom: 100px;
+      }
+
+      hr {
+        margin-left: 30px;
+        margin-right: 30px;
+      }
+
+      h4 {
+        padding-top: 20px;
+        text-align: center;
+        font-size: 12pt;
+
+      }
+
+      h5 {
+        font-size: 12pt;
+        font-weight: normal;
+        margin-left: 10px;
+      }
+
+
+    </style>
+
+    <div class=paper-material elevation="2">
+      <h4>STEP FILTER</h4>
+      <hr></hr>
+
+      <h5>Total Steps Level</h5>
+      <paper-range-slider always-show-pin style="width:100px" step="1" value-diff-min="1" value-min="4" value-max="25" max="25000" min="0"></paper-range-slider>
+
+
+      <h5>Median Active Steps Level</h5>
+      <paper-range-slider class="slider1" style="width:100px" value-min="0" value-max="10.5" max="10.5" min="0"></paper-range-slider>
+
+
+      <h5>Life Span</h5>
+      <paper-range-slider class="slider1" style="width:100px" value-min="0" value-max="9" max="9" min="0"></paper-range-slider>
+
+      <br/>
+      <paper-button raised> Reset </paper-button>
+      <paper-button raised> Apply </paper-button>
+
+    </div>
+
+    
+  </template>
+
+  <script>
+    class StepFilter extends Polymer.Element {
+      static get is() { return 'step-filter'; }
+    }
+
+    window.customElements.define(StepFilter.is, StepFilter);
+  </script>
+</dom-module>
